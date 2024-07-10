@@ -23,6 +23,22 @@
       "category": "Educação",
       "price": 1980,
       "createdAt": "2024-07-03T19:36:44.505Z"
+    },
+    {
+      "description": "Desenvolvimento de app",
+      "price": 10000,
+      "category": "Vendas",
+      "type": "income",
+      "createdAt": "2024-07-09T18:06:26.241Z",
+      "id": 4
+    },
+    {
+      "description": "Marmita",
+      "price": 50,
+      "category": "Almoço",
+      "type": "outcome",
+      "createdAt": "2024-07-09T18:15:54.807Z",
+      "id": 5
     }
   ]
 }
