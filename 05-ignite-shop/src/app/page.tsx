@@ -1,38 +1,43 @@
-import AppLayout from "@/layouts/_app";
-import Image from "next/image";
-
-import shirt1 from '@/assets/shirts/Shirt-1.svg'
-import shirt2 from '@/assets/shirts/Shirt-2.svg'
-import shirt3 from '@/assets/shirts/Shirt-3.svg'
-import shirt4 from '@/assets/shirts/Shirt-4.svg'
-import shirt5 from '@/assets/shirts/Shirt-5.svg'
-
-import { HomeContainer, Product } from "./styles";
+import Image from 'next/image'
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
+import AppLayout from '@/layouts/_app'
 
-export default function Home() {
+import { getStripeProducts } from './actions'
+import { HomeContainer, Product } from './styles'
+
+export default async function Home() {
+  const products = await getStripeProducts()
+
   return (
     <AppLayout>
       <HomeContainer>
-
         <Carousel className="min-h-[656px]">
           <CarouselContent className="min-h-[656px]">
-            {Array.from({ length: 5 }).map((_, i) => {
+            {products.map((product) => {
               return (
-                <CarouselItem className="min-h-[656px] md:basis-2 lg:basis-1/3 pl-8" key={i}>
+                <CarouselItem
+                  className="min-h-[656px] md:basis-2/3 lg:basis-1/3 pl-8"
+                  key={product.id}
+                >
                   <Product>
-                    <Image src={shirt1} width={520} height={480} alt="" className="object-cover" />
+                    <Image
+                      src={product.imageUrl}
+                      width={520}
+                      height={480}
+                      alt=""
+                      className="object-cover"
+                    />
 
                     <footer className="absolute bottom-1 left-1 right-1 rounded-[6px] flex items-center justify-between bg-black/[0.6] p-4">
-                      <strong className="text-lg">Camiseta X</strong>
-                      <span className="text-xl font-bold text-light">R$ 79,90</span>
+                      <strong className="text-lg">{product.name}</strong>
+                      <span className="text-xl font-bold text-light">
+                        {product.price}
+                      </span>
                     </footer>
                   </Product>
                 </CarouselItem>
@@ -40,8 +45,7 @@ export default function Home() {
             })}
           </CarouselContent>
         </Carousel>
-
       </HomeContainer>
     </AppLayout>
-  );
+  )
 }
