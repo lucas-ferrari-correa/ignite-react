@@ -85,6 +85,7 @@ green300: '#00b37e' --light */
 * {
   margin: 0;
   padding: 0;
+  boxsizing: "border-box";
 }
 
 body {
@@ -117,6 +118,41 @@ body {
       footer {
         transform: translateY(0%);
         opacity: 1;
+      }
+    }
+  }
+
+  .product-background-gradient {
+    background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%);
+
+    img {
+      objectfit: cover;
+    }
+  }
+
+  .product-details {
+    h1 {
+      @apply text-text;
+      font-size: 32px;
+    }
+
+    span {
+      @apply text-light;
+      margin-top: 1rem;
+      display: block;
+      font-size: 32px;
+    }
+
+    p {
+      @apply font-medium leading-[1.6] text-text;
+      margin-top: 2.5rem;
+    }
+
+    button {
+      @apply mt-auto bg-principal rounded-[8px] p-5 cursor-pointer font-bold text-lg;
+
+      &:hover {
+        @apply bg-light;
       }
     }
   }

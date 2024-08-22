@@ -6,8 +6,8 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import AppLayout from '@/layouts/_app'
+import { getStripeProducts } from '@/services/get-stripe-products'
 
-import { getStripeProducts } from './actions'
 import { HomeContainer, Product } from './styles'
 
 export default async function Home() {
@@ -24,7 +24,7 @@ export default async function Home() {
                   className="min-h-[656px] md:basis-2/3 lg:basis-1/3 pl-8"
                   key={product.id}
                 >
-                  <Product>
+                  <Product href={`/product/${product.id}`}>
                     <Image
                       src={product.imageUrl}
                       width={520}
