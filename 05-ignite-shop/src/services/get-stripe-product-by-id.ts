@@ -26,5 +26,6 @@ export const getStripeProductById = async ({ id }: Props) => {
       currency: 'BRL',
     }).format((price.unit_amount ?? 0) / 100),
     description: product.description,
+    defaultPriceId: price.id,
   }
 }

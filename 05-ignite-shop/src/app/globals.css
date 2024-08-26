@@ -126,7 +126,7 @@ body {
     background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%);
 
     img {
-      objectfit: cover;
+      object-fit: cover;
     }
   }
 
@@ -151,7 +151,12 @@ body {
     button {
       @apply mt-auto bg-principal rounded-[8px] p-5 cursor-pointer font-bold text-lg;
 
-      &:hover {
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover {
         @apply bg-light;
       }
     }

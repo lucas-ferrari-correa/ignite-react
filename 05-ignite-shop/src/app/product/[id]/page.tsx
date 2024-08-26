@@ -5,7 +5,17 @@ import AppLayout from '@/layouts/_app'
 import { getStripeProductById } from '@/services/get-stripe-product-by-id'
 import { getStripeProducts } from '@/services/get-stripe-products'
 
+import Button from './components/button'
 import { ImageContainer, ProductContainer, ProductDetails } from './style'
+
+export interface ProductProps {
+  id: string
+  name: string
+  imageUrl: string
+  price: string
+  description: string | null
+  defaultPriceId: string
+}
 
 export default async function Product({
   params,
@@ -33,7 +43,7 @@ export default async function Product({
 
           <p>{product.description}</p>
 
-          <button>Comprar agora</button>
+          <Button product={product}>Compre aqui</Button>
         </ProductDetails>
       </ProductContainer>
     </AppLayout>
