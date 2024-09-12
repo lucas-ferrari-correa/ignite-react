@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "pnpm": {
+    "hoistPattern": ["*"],
+    "shared-workspace-lockfile": true
+  },
+  "devDependencies": {
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  }
+}
