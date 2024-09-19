@@ -1,11 +1,13 @@
 {
-  "name": "docs",
+  "name": "@ignite-ui/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "storybook dev -p 6006",
+    "dev:old": "vite",
+    "build": "storybook build",
+    "build:old": "tsc -b && vite build",
     "lint": "eslint --fix .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
