@@ -20,6 +20,9 @@ importers:
 
   packages/docs:
     dependencies:
+      '@storybook/addon-a11y':
+        specifier: ^8.3.3
+        version: 8.3.3(storybook@8.3.0)
       phosphor-react:
         specifier: ^1.4.1
         version: 1.4.1(react@18.3.1)
@@ -898,6 +901,11 @@ packages:
     peerDependencies:
       react: '>= 16.3.0'
 
+  '@storybook/addon-a11y@8.3.3':
+    resolution: {integrity: sha512-TiCbNfKJOBD2b8mMqHOii8ntdt0V4+ifAgzmGku+F1hdf2EhEw1nL6CHpvnx/GBXoGeK4mrPJIKKoPNp+zz0dw==}
+    peerDependencies:
+      storybook: ^8.3.3
+
   '@storybook/addon-actions@8.3.0':
     resolution: {integrity: sha512-HvAc3fW979JVw8CSKXZMouvgrJ2BNLNWaUB8jNokQb3Us00P6igVKLwg/pBV8GBgDr5Ng4pHYqi/ZH+xzEYFFw==}
     peerDependencies:
@@ -927,6 +935,11 @@ packages:
     resolution: {integrity: sha512-bS1rqzbwGgeTKVLYEyY+6DzpafLtDLnoSF+KzRIiV7/1H30evhwVSzkgX1L2F6+ssS1n9WrRJeglniv9j+5mGQ==}
     peerDependencies:
       storybook: ^8.3.0
+
+  '@storybook/addon-highlight@8.3.3':
+    resolution: {integrity: sha512-MB084xJM66rLU+iFFk34kjLUiAWzDiy6Kz4uZRa1CnNqEK0sdI8HaoQGgOxTIa2xgJor05/8/mlYlMkP/0INsQ==}
+    peerDependencies:
+      storybook: ^8.3.3
 
   '@storybook/addon-interactions@8.3.0':
     resolution: {integrity: sha512-nAVUFpt2kTaPMY7RxfZwiYipngxf76dfx1E/QP9n/333+/pe88UwXbUkmLKpyC8EWqZXDI0oSV5XDDzoI5x3dA==}
@@ -4044,6 +4057,12 @@ snapshots:
     dependencies:
       react: 18.3.1
 
+  '@storybook/addon-a11y@8.3.3(storybook@8.3.0)':
+    dependencies:
+      '@storybook/addon-highlight': 8.3.3(storybook@8.3.0)
+      axe-core: 4.10.0
+      storybook: 8.3.0
+
   '@storybook/addon-actions@8.3.0(storybook@8.3.0)':
     dependencies:
       '@storybook/global': 5.0.0
@@ -4103,6 +4122,11 @@ snapshots:
       - webpack-sources
 
   '@storybook/addon-highlight@8.3.0(storybook@8.3.0)':
+    dependencies:
+      '@storybook/global': 5.0.0
+      storybook: 8.3.0
+
+  '@storybook/addon-highlight@8.3.3(storybook@8.3.0)':
     dependencies:
       '@storybook/global': 5.0.0
       storybook: 8.3.0

@@ -8,6 +8,13 @@ export default {
     src: 'https://github.com/lucas-ferrari-correa.png',
     alt: 'Lucas Ferrari',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
