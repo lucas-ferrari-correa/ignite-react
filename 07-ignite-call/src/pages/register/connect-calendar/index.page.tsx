@@ -35,7 +35,7 @@ export default function Register() {
         <ConnectItem>
           <Text>Google Calendar</Text>
 
-          {!isSignedIn ? (
+          {isSignedIn ? (
             <Button size="sm" disabled>
               Conectado
               <Check />
