@@ -1,5 +1,5 @@
 import { Button, Heading, MultiStep, Text } from '@ignite-ui/react'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { signIn, useSession } from 'next-auth/react'
 import { ArrowRight, Check } from 'phosphor-react'
 
@@ -16,6 +16,12 @@ export default function ConnectCalendar() {
 
   async function handleConnectGoogle() {
     await signIn('google')
+  }
+
+  const router = useRouter()
+
+  async function handleNavigateToNextStep() {
+    await router.push('/register/time-intervals')
   }
 
   return (
@@ -55,7 +61,11 @@ export default function ConnectCalendar() {
           </AuthError>
         )}
 
-        <Button type="submit" disabled={!isSignedIn}>
+        <Button
+          type="submit"
+          disabled={!isSignedIn}
+          onClick={handleNavigateToNextStep}
+        >
           Próximo passo
           <ArrowRight />
         </Button>
